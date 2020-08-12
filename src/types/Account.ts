@@ -1,25 +1,24 @@
-interface Account{
-  id: string,
-  type: string,
-  attributes: AccountAttributes,
+import { TerraformCloudData } from "./TerraformCloudData";
+
+export interface Account extends TerraformCloudData {
+  attributes: AccountAttributes;
 }
 
-interface AccountAttributes{
-  username: string,
-  is_service_account: boolean,
-  avatar_url: string,
-  v2_only: boolean,
-  is_site_admin: boolean,
-  is_sso_login: boolean,
-  email: string,
-  unconfirmed_email: null | string,
-  permissions: AccountPermissions,
+export interface AccountAttributes {
+  username: string;
+  "is-service-account": boolean;
+  "avatar-url": string;
+  "v2-only": boolean;
+  "is-site-admin": boolean;
+  "is-sso-login": boolean;
+  email: string;
+  "unconfirmed-email": null | string;
+  permissions: AccountPermissions;
 }
 
-interface AccountPermissions{
-  can_create_organizations: boolean,
-  can_change_email: boolean,
-  can_change_username: boolean,
+export interface AccountPermissions {
+  "can-create-organizations": boolean;
+  "can-change-email": boolean;
+  "can-change-username": boolean;
+  "can-manage-user-tokens": boolean;
 }
-
-export {Account, AccountAttributes, AccountPermissions}
