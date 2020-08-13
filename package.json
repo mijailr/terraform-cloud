@@ -1,9 +1,9 @@
 {
-  "name": "terraform-cloud-client",
-  "version": "1.0.0",
+  "name": "terraform-cloud",
+  "version": "0.0.0",
   "description": "Terraform Cloud API wrapper",
   "main": "src/index.js",
-  "repository": "https://github.com/mijailr/terraform-cloud-client",
+  "repository": "https://github.com/mijailr/terraform-cloud",
   "author": "Mijail Rondon <mijail@hey.com>",
   "license": "MIT",
   "scripts": {
