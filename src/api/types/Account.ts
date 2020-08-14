@@ -1,10 +1,10 @@
-import { TerraformCloudData } from "./TerraformCloudData";
+import { TerraformCloudData, Links } from "../types/TerraformCloudData";
 
-export interface Account extends TerraformCloudData {
-  attributes: AccountAttributes;
-}
+export type Account = TerraformCloudData<AccountAttributes> & {
+  relationships: AccountRelationships
+};
 
-export interface AccountAttributes {
+interface AccountAttributes {
   username: string;
   "is-service-account": boolean;
   "avatar-url": string;
@@ -16,9 +16,15 @@ export interface AccountAttributes {
   permissions: AccountPermissions;
 }
 
-export interface AccountPermissions {
+interface AccountPermissions {
   "can-create-organizations": boolean;
   "can-change-email": boolean;
   "can-change-username": boolean;
   "can-manage-user-tokens": boolean;
+}
+
+interface AccountRelationships {
+  'authentication-tokens': {
+    links: Links
+  }
 }
