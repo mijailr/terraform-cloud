@@ -5,26 +5,26 @@ export type Account = TerraformCloudData<AccountAttributes> & {
 }
 
 interface AccountAttributes {
-  username: string
-  'is-service-account': boolean
-  'avatar-url': string
-  'v2-only': boolean
-  'is-site-admin': boolean
-  'is-sso-login': boolean
+  avatarUrl: string
   email: string
-  'unconfirmed-email': null | string
+  isServiceAccount: boolean
+  isSiteAdmin: boolean
+  isSsoLogin: boolean
   permissions: AccountPermissions
+  unconfirmedEmail: null | string
+  username: string
+  v2Only: boolean
 }
 
 interface AccountPermissions {
-  'can-create-organizations': boolean
-  'can-change-email': boolean
-  'can-change-username': boolean
-  'can-manage-user-tokens': boolean
+  canChangeEmail: boolean
+  canChangeUsername: boolean
+  canCreateOrganizations: boolean
+  canManageUserTokens: boolean
 }
 
 interface AccountRelationships {
-  'authentication-tokens': {
+  authenticationTokens: {
     links: Links
   }
 }
