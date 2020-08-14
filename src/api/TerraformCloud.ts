@@ -1,9 +1,9 @@
 import { AxiosInstance } from 'axios'
 import { EventEmitter } from 'events'
 import terraformCloudApiClient from './terraformCloudApiClient'
-import { Account, Plan, Run } from './types'
+import { Account, Plan, Run } from '../types'
 
-export default class TerraformCloudApi extends EventEmitter {
+export default class TerraformCloud extends EventEmitter {
   private readonly client: AxiosInstance
 
   constructor(apiKey: string) {

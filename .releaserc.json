@@ -7,10 +7,10 @@
         "preset": "angular",
         "releaseRules": [
           { "type": "docs", "scope": "README", "release": "patch" },
-          { "type": "ref", "release": "patch" },
+          { "type": "refactor", "release": "patch" },
+          { "type": "fix", "release": "patch" },
           { "type": "build", "release": "minor" },
-          { "type": "feat", "release": "minor" },
-          { "type": "fix", "release": "patch" }
+          { "type": "feat", "release": "minor" }
         ],
         "parserOpts": {
           "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]

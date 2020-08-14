@@ -1,4 +1,4 @@
-import { TerraformCloudData, Links } from '../types/TerraformCloudData'
+import { TerraformCloudData, Links } from './TerraformCloudData'
 
 export type Account = TerraformCloudData<AccountAttributes> & {
   relationships: AccountRelationships
