@@ -7,10 +7,19 @@ export type Account = TerraformCloudData<AccountAttributes> & {
 interface AccountAttributes {
   avatarUrl: string
   email: string
+  enterpriseSupport: boolean
+  hasGitHubAppToken: boolean
+  isConfirmed: boolean
   isServiceAccount: boolean
   isSiteAdmin: boolean
   isSsoLogin: boolean
+  isSudo: boolean
+  onboardingStatus: string
   permissions: AccountPermissions
+  twoFactor: {
+    enabled: boolean
+    verified: boolean
+  }
   unconfirmedEmail: null | string
   username: string
   v2Only: boolean
