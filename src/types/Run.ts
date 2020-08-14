@@ -4,13 +4,13 @@ export type Run = TerraformCloudData<RunAttributes> & {
   relationships: RunRelationship
 }
 
-export interface RunRelationship {
+interface RunRelationship {
   plan: Relationship
   'created-by': Relationship
   'confirmed-by': Relationship
 }
 
-export interface RunAttributes {
+interface RunAttributes {
   'auto-apply': boolean
   'error-text': null | string
   'is-destroy': boolean

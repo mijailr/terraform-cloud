@@ -1,3 +1,4 @@
-import TerraformCloudApi from './api/TerraformCloudApi'
+import TerraformCloud from './api/TerraformCloud'
+import { Account, Plan, Run } from './types'
 
-export { TerraformCloudApi }
+export { TerraformCloud, Account, Plan, Run }

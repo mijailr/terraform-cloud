@@ -1,9 +1,8 @@
 import nock from 'nock'
-import TerraformCloudApi from '../../src/api/TerraformCloudApi'
-import AccountMock from '../mocks/AccountMock'
-import RunMock from '../mocks/RunMock'
+import TerraformCloud from '../../src/api/TerraformCloud'
+import { AccountMock, RunMock } from '../mocks'
 
-const client = new TerraformCloudApi('any-key')
+const client = new TerraformCloud('any-key')
 
 describe('Api requests', () => {
   describe('Account', () => {
