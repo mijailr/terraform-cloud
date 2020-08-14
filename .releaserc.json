@@ -1,0 +1,35 @@
+{
+  "branches": ["+([0-9])?(.{+([0-9]),x}).x", "main"],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          { "type": "docs", "scope": "README", "release": "patch" },
+          { "type": "ref", "release": "patch" },
+          { "type": "build", "release": "minor" },
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" }
+        ],
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+        }
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "./pkg"
+      }
+    ],
+    [
+      "semantic-release-plugin-update-version-in-files",
+      {
+        "files": ["pkg/dist-web/*", "pkg/dist-node/*", "pkg/*/version.*"]
+      }
+    ]
+  ]
+}
