@@ -16,9 +16,9 @@ export default class TerraformCloudApi extends EventEmitter {
     return await this.get<Account>(path)
   }
 
-  async getPlan(planId: string): Promise<Plan> {
-    const path = `/plans/${planId}`
-    return await this.get<Plan>(path)
+  async getRuns(workspaceId: string): Promise<Run[]> {
+    const path = `/workspaces/${workspaceId}/runs`
+    return await this.get<Run[]>(path)
   }
 
   async getRun(runId: string): Promise<Run> {
@@ -26,9 +26,9 @@ export default class TerraformCloudApi extends EventEmitter {
     return await this.get<Run>(path)
   }
 
-  async getRuns(workspaceId: string): Promise<Run[]> {
-    const path = `/workspaces/${workspaceId}/runs`
-    return await this.get<Run[]>(path)
+  async getPlan(planId: string): Promise<Plan> {
+    const path = `/plans/${planId}`
+    return await this.get<Plan>(path)
   }
 
   private async get<Res>(path: string): Promise<Res> {
