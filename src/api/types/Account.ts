@@ -1,7 +1,7 @@
 import { TerraformCloudData, Links } from "../types/TerraformCloudData";
 
 export type Account = TerraformCloudData<AccountAttributes> & {
-  relationships: AccountRelationships
+  relationships: AccountRelationships;
 };
 
 interface AccountAttributes {
@@ -24,7 +24,7 @@ interface AccountPermissions {
 }
 
 interface AccountRelationships {
-  'authentication-tokens': {
-    links: Links
-  }
+  "authentication-tokens": {
+    links: Links;
+  };
 }
