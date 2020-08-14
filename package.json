@@ -9,13 +9,14 @@
   "author": "Mijail Rondon <mijail@hey.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p .",
+    "build": "pika pack",
     "test": "jest --coverage",
     "lint": "prettier --check '{src,test}/**/*.{js,json,ts}' README.md package.json",
     "lint:fix": "prettier --write '{src,test}/**/*.{js,json,ts}' README.md package.json",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
+    "@pika/pack": "^0.5.0",
     "@types/jest": "^26.0.9",
     "@types/node": "^14.0.27",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
@@ -28,10 +29,10 @@
     "nock": "^13.0.4",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1",
     "ts-jest": "^26.2.0",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.7",
-    "semantic-release": "^17.1.1"
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "axios": "^0.19.2"
@@ -57,5 +58,41 @@
   "lint-staged": {
     "*.ts": "eslint --cache --fix",
     "*.{ts,md,json}": "prettier --write"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./pkg"
+        }
+      ],
+      [
+        "semantic-release-plugin-update-version-in-files",
+        {
+          "files": [
+            "pkg/dist-web/*",
+            "pkg/dist-node/*",
+            "pkg/*/version.*"
+          ]
+        }
+      ]
+    ]
   }
 }
