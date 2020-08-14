@@ -1,0 +1,38 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - dependabot/npm_and_yarn/**
+      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version:
+          - 10
+          - 12
+          - 14
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1.4.3
+        with:
+          node-version: "${{ matrix.node_version }}"
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Linter
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test
