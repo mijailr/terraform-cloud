@@ -1,19 +1,19 @@
 {
   "name": "terraform-cloud",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Terraform Cloud API wrapper",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mijailr/terraform-cloud.git"
+    "url": "https://github.com/mijailr/terraform-cloud.git"
   },
   "author": "Mijail Rondon <mijail@hey.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "dev": "nodemon src/terraformCloudApi.ts",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "prettier --check '{src,test}/**/*.{js,json,ts}' README.md package.json",
-    "lint:fix": "prettier --write '{src,test}/**/*.{js,json,ts}' README.md package.json"
+    "lint:fix": "prettier --write '{src,test}/**/*.{js,json,ts}' README.md package.json",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@types/jest": "^26.0.9",
@@ -30,7 +30,8 @@
     "prettier": "^2.0.5",
     "ts-jest": "^26.2.0",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "semantic-release": "^17.1.1"
   },
   "dependencies": {
     "axios": "^0.19.2"
