@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import { camelize } from 'casing'
 
 const terraformCloudApiClient = (apiKey: string): AxiosInstance => {
   const apiUrl = 'https://app.terraform.io/api/v2'
@@ -11,7 +12,7 @@ const terraformCloudApiClient = (apiKey: string): AxiosInstance => {
     return req
   })
 
-  client.interceptors.response.use((res: AxiosResponse) => res.data)
+  client.interceptors.response.use((res: AxiosResponse) => camelize(res.data))
 
   return client
 }
