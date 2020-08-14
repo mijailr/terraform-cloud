@@ -32,7 +32,7 @@ describe('Api requests', () => {
       const scope = nock('https://app.terraform.io/api/v2').get(`/runs/${runId}`).once().reply(200, RunMock)
       const run = await client.getRun(runId)
 
-      expect(run.attributes['has-changes']).toBe(true)
+      expect(run.attributes.hasChanges).toBe(true)
       scope.done()
       done()
     })
