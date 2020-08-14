@@ -1,8 +1,11 @@
 # terraform-cloud
 
-A typescript [Terraform Cloud API](https://www.terraform.io/docs/cloud/api/index.html) wrapper.
+[![@latest](https://img.shields.io/npm/v/terraform-cloud.svg)](https://www.npmjs.com/package/terraform-cloud)
+[![Build Status](https://github.com/mijailr/terraform-cloud/workflows/Test/badge.svg)](https://github.com/mijailr/terraform-cloud/actions?query=workflow%3ATest+branch%3Amaster)
 
-> This is a work in progress, if you want to contribute feel free to integrate a new endpoint.
+[Terraform Cloud REST API](https://www.terraform.io/docs/cloud/api/index.html) client for javascript.
+
+> NOTE: This is a work in progress, please review the current implementation.
 
 ## Instalation
 
@@ -14,18 +17,22 @@ npm install terraform-cloud # With NPM
 ## Usage
 
 ```ts
-import { TerraformCloudApi } from 'terraform-cloud'
+import { TerraformCloud } from 'terraform-cloud'
 
 // Set a your terraform cloud API token
-const terraformClient = new TerraformCloudApi('terraform-api-token')
+const terraformClient = new TerraformCloud('terraform-api-token')
 
 // Make an API call
 
 // Get Account Information
-const account = terraformClient.getAccount()
+terraformClient.getAccount().then(account => {
+  // handle account data
+})
 
 // Get Run information by run id (ex: 'run-xis032ss)
-const run = terraformClient.getRun('run-id')
+terraformClient.getRun('run-id').then(run => {
+  // handle run data
+})
 ```
 
 ## Current implementation
@@ -39,3 +46,11 @@ const run = terraformClient.getRun('run-id')
 - [ ] Workspace by ID
 - [ ] Workspaces
 - [ ] ...
+
+## Contributing
+
+We would love you to contribute to `terraform-cloud`, pull requests are very welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+
+## LICENSE
+
+[MIT](LICENSE)
