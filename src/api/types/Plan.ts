@@ -5,7 +5,7 @@ export type Plan = TerraformCloudData<PlanAttributes> & {
 };
 
 interface PlanRelationship {
-  'state-versions': Relationship
+  "state-versions": Relationship;
 }
 
 interface PlanAttributes {
