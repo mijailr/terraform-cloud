@@ -1,3 +1,4 @@
 import { UserDetailsUpdateMock, UserMock, UserPasswordUpdateMock } from './UserMock'
+import { PlanMock } from './PlanMock'
 
-export { UserDetailsUpdateMock, UserMock, UserPasswordUpdateMock }
+export { PlanMock, UserDetailsUpdateMock, UserMock, UserPasswordUpdateMock }
