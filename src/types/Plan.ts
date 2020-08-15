@@ -14,7 +14,7 @@ interface PlanAttributes {
   resourceAdditions: number
   resourceChanges: number
   resourceDestructions: number
-  status: string
+  status: 'pending' | 'managed_queued' | 'queued' | 'running' | 'errored' | 'canceled' | 'finished' | 'unreachable'
   statusTimestamps: PlanTimestamps
 }
 

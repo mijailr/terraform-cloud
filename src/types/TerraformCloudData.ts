@@ -6,6 +6,7 @@ interface Data {
 export interface Links {
   self?: string
   related?: string
+  jsonOutput?: string
 }
 
 export type Relationship = {
