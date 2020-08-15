@@ -38,7 +38,7 @@ terraformClient.getRun('run-id').then(run => {
 
 ## Current implementation
 
-- [x] Account details
+- [x] [Account](https://www.terraform.io/docs/cloud/api/account.html) (100%)
 - [x] Runs by workspace
 - [x] Run by ID
 
