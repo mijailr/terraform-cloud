@@ -1,5 +1,5 @@
-import { Account } from './Account'
+import { User } from './User'
 import { Plan } from './Plan'
 import { Run } from './Run'
 
-export { Account, Plan, Run }
+export { User, Plan, Run }

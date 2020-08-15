@@ -1,4 +1,3 @@
-import AccountMock from './AccountMock'
-import RunMock from './RunMock'
+import { UserDetailsUpdateMock, UserMock, UserPasswordUpdateMock } from './UserMock'
 
-export { AccountMock, RunMock }
+export { UserDetailsUpdateMock, UserMock, UserPasswordUpdateMock }
