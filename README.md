@@ -2,6 +2,8 @@
 
 [![@latest](https://img.shields.io/npm/v/terraform-cloud.svg)](https://www.npmjs.com/package/terraform-cloud)
 [![Build Status](https://github.com/mijailr/terraform-cloud/workflows/Test/badge.svg)](https://github.com/mijailr/terraform-cloud/actions?query=workflow%3ATest+branch%3Amaster)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a68c0e9a298ae127d7de/maintainability)](https://codeclimate.com/github/mijailr/terraform-cloud/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a68c0e9a298ae127d7de/test_coverage)](https://codeclimate.com/github/mijailr/terraform-cloud/test_coverage)
 [![Try terraform-cloud on RunKit](https://badge.runkitcdn.com/terraform-cloud.svg)](https://npm.runkit.com/terraform-cloud)
 
 [Terraform Cloud REST API](https://www.terraform.io/docs/cloud/api/index.html) client for javascript.
