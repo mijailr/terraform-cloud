@@ -1,5 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ["./src/", "./test/"]
+  coveragePathIgnorePatterns: ["<rootDir>/test/mocks", "<rootDir>/node_modules/"]
 };
