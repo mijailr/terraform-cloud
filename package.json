@@ -10,7 +10,8 @@
   "license": "MIT",
   "scripts": {
     "build": "pika build",
-    "test": "jest --coverage",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "lint": "prettier --check '{src,test}/**/*.{js,json,ts}' README.md package.json",
     "lint:fix": "prettier --write '{src,test}/**/*.{js,json,ts}' README.md package.json",
     "semantic-release": "semantic-release"
