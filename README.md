@@ -23,7 +23,7 @@ npm install terraform-cloud # With NPM
 import { TerraformCloud } from 'terraform-cloud'
 
 // Set a your terraform cloud API token
-const { Account } = new TerraformCloud('terraform-api-token')
+const { Account, Plans } = new TerraformCloud('terraform-api-token')
 
 // Make an API call
 
@@ -47,16 +47,20 @@ const updatePasswordRequest = {
 Account.updatePassword(updatePasswordRequest).then(user => {
   // handle account password update
 })
+
+Plans.show('plan-id').then(plan => {
+  // handle plan data
+})
 ```
 
 ## Current implementation
 
 - [x] [Account](https://www.terraform.io/docs/cloud/api/account.html) (100%)
+- [x] [Plans](https://www.terraform.io/docs/cloud/api/plans.html) (90%) - **TODO:** Plan Json Output
 
 ## TODO
 
 - [ ] Runs
-- [ ] Plans
 - [ ] Workspaces
 - [ ] ...
 
