@@ -1,6 +1,6 @@
 import { AxiosInstance } from 'axios'
-import { Plan } from '../types'
-import { Request } from './Request'
+import { Plan } from '../..'
+import Request from './Request'
 
 export default class Plans extends Request {
   constructor(client: AxiosInstance) {

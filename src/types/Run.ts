@@ -1,4 +1,4 @@
-import { TerraformCloudData, Relationship, Type } from './TerraformCloudData'
+import { TerraformCloudData, Relationship } from './TerraformCloudData'
 
 export type Run = TerraformCloudData<RunAttributes> & {
   relationships: RunRelationship
@@ -21,26 +21,26 @@ export type RunRequest = {
       workspace: {
         data: {
           id: string
-          type: Type.Workspaces
+          type: 'workspaces'
         }
       }
       'configuration-version': {
         data: {
           id: string
-          type: Type.ConfigurationVersions
+          type: 'configuration-versions'
         }
       }
     }
   }
 }
 
-interface RunRelationship {
+export interface RunRelationship {
   confirmedBy: Relationship
   createdBy: Relationship
   plan: Relationship
 }
 
-interface RunAttributes {
+export interface RunAttributes {
   autoApply: boolean
   createdAt: Date
   errorText: null | string

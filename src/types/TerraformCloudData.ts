@@ -1,4 +1,4 @@
-interface Data {
+export interface Data {
   id: string
   type: string
 }
@@ -18,14 +18,6 @@ export type TerraformCloudData<Attributes> = Data & {
   attributes: Attributes
   relationships?: [Relationship]
   links?: Links
-}
-
-export enum Type {
-  ConfigurationVersions = 'configuration-versions',
-  Plans = 'plans',
-  Runs = 'runs',
-  User = 'user',
-  Workspaces = 'workspaces',
 }
 
 export type Page = {

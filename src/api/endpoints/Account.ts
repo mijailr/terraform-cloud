@@ -1,6 +1,6 @@
 import { AxiosInstance } from 'axios'
-import { User, UserPassword, UserUpdateInfo } from '../types/User'
-import { Request } from './Request'
+import { User, UserUpdatePassword, UserUpdateInfo } from '../..'
+import Request from './Request'
 
 export default class Account extends Request {
   constructor(client: AxiosInstance) {
@@ -22,8 +22,8 @@ export default class Account extends Request {
     return await this.patch<User, UserUpdateInfo>(path, request)
   }
 
-  async changePassword(request: UserPassword): Promise<User> {
+  async changePassword(request: UserUpdatePassword): Promise<User> {
     const path = '/account/password'
-    return await this.patch<User, UserPassword>(path, request)
+    return await this.patch<User, UserUpdatePassword>(path, request)
   }
 }

@@ -1,6 +1,6 @@
-import { TerraformCloudData, Links, Params, Type } from './TerraformCloudData'
+import { TerraformCloudData, Links, Params } from './TerraformCloudData'
 
-interface UserAttributes {
+export interface UserAttributes {
   avatarUrl: string
   email: string
   enterpriseSupport: boolean
@@ -21,25 +21,25 @@ interface UserAttributes {
   v2Only: boolean
 }
 
-interface UserPermissions {
+export interface UserPermissions {
   canChangeEmail: boolean
   canChangeUsername: boolean
   canCreateOrganizations: boolean
   canManageUserTokens: boolean
 }
 
-interface UserRelationships {
+export interface UserRelationships {
   authenticationTokens: {
     links: Links
   }
 }
 
-interface UpdateAttributes {
+export interface UpdateAttributes {
   email: string
   username: string
 }
 
-interface PasswordAttributes {
+export interface PasswordAttributes {
   current_password: string
   password: string
   password_confirmation: string
@@ -48,5 +48,5 @@ interface PasswordAttributes {
 export type User = TerraformCloudData<UserAttributes> & {
   relationships: UserRelationships
 }
-export type UserUpdateInfo = Params<Type.User, UpdateAttributes>
-export type UserPassword = Params<Type.User, PasswordAttributes>
+export type UserUpdateInfo = Params<'users', UpdateAttributes>
+export type UserUpdatePassword = Params<'users', PasswordAttributes>

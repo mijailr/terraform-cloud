@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios'
-import { Run } from '..'
-import { Request } from './Request'
-import { RunRequest, RunActionRequest, RunAction } from '../types/Run'
+import { Run } from '../..'
+import Request from './Request'
+import { RunRequest, RunActionRequest, RunAction } from '../../types/Run'
 
 export default class Runs extends Request {
   constructor(client: AxiosInstance) {
@@ -25,6 +25,6 @@ export default class Runs extends Request {
 
   async action(action: RunAction, runId: string, request?: RunActionRequest): Promise<void> {
     const path = `/runs/${runId}/actions/${action}`
-    return await this.post<void, RunActionRequest>(path, request ? request : {})
+    return await this.post<void, RunActionRequest>(path, request || {})
   }
 }
