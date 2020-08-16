@@ -8,12 +8,12 @@ export default class Runs extends Request {
     super(client)
   }
 
-  async getRuns(workspaceId: string, number = 1, size = 20): Promise<Run[]> {
+  async list(workspaceId: string, number = 1, size = 20): Promise<Run[]> {
     const path = `/workspaces/${workspaceId}/runs?page[${number}]&page[${size}]`
     return await this.get<Run[]>(path)
   }
 
-  async getRun(runId: string): Promise<Run> {
+  async show(runId: string): Promise<Run> {
     const path = `/runs/${runId}`
     return await this.get<Run>(path)
   }
