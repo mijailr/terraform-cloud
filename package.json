@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "build": "pika build",
-    "test": "jest",
+    "test": "jest --verbose",
     "coverage": "jest --coverage",
     "lint": "prettier --check '{src,test}/**/*.{js,json,ts}' README.md package.json",
     "lint:fix": "prettier --write '{src,test}/**/*.{js,json,ts}' README.md package.json",

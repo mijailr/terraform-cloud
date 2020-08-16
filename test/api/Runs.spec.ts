@@ -7,6 +7,7 @@ import { RunMock, RunRequestMock } from '../mocks'
 const { Runs } = new TerraformCloud('api-key')
 const runId = 'run-id'
 const workspaceId = 'workspace-id'
+const actions: RunAction[] = ['apply', 'discard', 'cancel', 'force-cancel', 'force-execute']
 
 describe('Runs endpoints', () => {
   it('creates a run', async done => {
@@ -23,6 +24,7 @@ describe('Runs endpoints', () => {
 
     const run = await Runs.show(runId)
     expect(run.type).toBe(Type.Runs)
+    scope.done()
     done()
   })
 
@@ -39,14 +41,12 @@ describe('Runs endpoints', () => {
     done()
   })
 
-  const actions = ['apply', 'discard', 'cancel', 'force-cancel', 'force-execute']
-
   actions.map(action => {
     it(`run action ${action}`, async done => {
       const scope = nock('https://app.terraform.io/api/v2')
         .post(`/runs/${runId}/actions/${action}`, { comment: 'none' })
         .reply(204)
-      await Runs.action(action as RunAction, runId, { comment: 'none' })
+      await Runs.action(action, runId, { comment: 'none' })
       scope.done()
       done()
     })
