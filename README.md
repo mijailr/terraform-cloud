@@ -23,7 +23,7 @@ npm install terraform-cloud # With NPM
 import { TerraformCloud } from 'terraform-cloud'
 
 // Set a your terraform cloud API token
-const { Account, Plans } = new TerraformCloud('terraform-api-token')
+const { Account, Plans, Runs } = new TerraformCloud('terraform-api-token')
 
 // Make an API call
 
@@ -51,16 +51,27 @@ Account.updatePassword(updatePasswordRequest).then(user => {
 Plans.show('plan-id').then(plan => {
   // handle plan data
 })
+
+// Runs
+
+Runs.show('run-id').then(run => {
+  // handle run data
+})
+
+// Perform an action over a run ex: (apply, cancel, discard, force-cancel, force-execute)
+Runs.action('cancel', 'run-id', { data: { comment: 'cancel run by id' } }).then(() => {
+  // handle run action
+})
 ```
 
 ## Current implementation
 
 - [x] [Account](https://www.terraform.io/docs/cloud/api/account.html) (100%)
+- [x] [Runs](https://www.terraform.io/docs/cloud/api/plans.html) (100%)
 - [x] [Plans](https://www.terraform.io/docs/cloud/api/plans.html) (90%) - **TODO:** Plan Json Output
 
 ## TODO
 
-- [ ] Runs
 - [ ] Workspaces
 - [ ] ...
 
