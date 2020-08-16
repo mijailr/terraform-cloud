@@ -21,7 +21,11 @@ export type TerraformCloudData<Attributes> = Data & {
 }
 
 export enum Type {
+  ConfigurationVersions = 'configuration-versions',
+  Plans = 'plans',
+  Runs = 'runs',
   User = 'user',
+  Workspaces = 'workspaces',
 }
 
 export type Page = {
