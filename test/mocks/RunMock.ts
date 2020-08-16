@@ -53,14 +53,13 @@ export const RunMock = {
   links: { self: '/api/v2/runs/run-ybWY3ADtDx4YNaph' },
 }
 
-export const RunRequestMock = {
+export const RunRequestMock: RunRequest = {
   data: {
     attributes: {
       'is-destroy': false,
       message: 'Custom message',
       'target-addrs': ['example.resource_address'],
     },
-    type: 'runs',
     relationships: {
       workspace: {
         data: {
@@ -76,4 +75,4 @@ export const RunRequestMock = {
       },
     },
   },
-} as RunRequest
+}

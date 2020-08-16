@@ -1,7 +1,5 @@
 import nock from 'nock'
-import TerraformCloud from '../../src/api/TerraformCloud'
-import { RunAction } from '../../src/types/Run'
-import { Type } from '../../src/types/TerraformCloudData'
+import TerraformCloud, { RunAction, RunActionRequest } from '../../src'
 import { RunMock, RunRequestMock } from '../mocks'
 
 const { Runs } = new TerraformCloud('api-key')
@@ -10,7 +8,7 @@ const workspaceId = 'workspace-id'
 const actions: RunAction[] = ['apply', 'discard', 'cancel', 'force-cancel', 'force-execute']
 
 describe('Runs endpoints', () => {
-  it('creates a run', async done => {
+  it('create run', async done => {
     const scope = nock('https://app.terraform.io/api/v2').post(`/runs`, RunRequestMock).reply(201, { data: RunMock })
     const run = await Runs.create(RunRequestMock)
 
@@ -19,11 +17,11 @@ describe('Runs endpoints', () => {
     done()
   })
 
-  it('show a run by id', async done => {
+  it('show run by id', async done => {
     const scope = nock('https://app.terraform.io/api/v2').get(`/runs/${runId}`).reply(200, { data: RunMock })
 
     const run = await Runs.show(runId)
-    expect(run.type).toBe(Type.Runs)
+    expect(run.type).toBe('runs')
     scope.done()
     done()
   })
@@ -43,10 +41,9 @@ describe('Runs endpoints', () => {
 
   actions.map(action => {
     it(`run action ${action}`, async done => {
-      const scope = nock('https://app.terraform.io/api/v2')
-        .post(`/runs/${runId}/actions/${action}`, { comment: 'none' })
-        .reply(204)
-      await Runs.action(action, runId, { comment: 'none' })
+      const request: RunActionRequest = { comment: 'none' }
+      const scope = nock('https://app.terraform.io/api/v2').post(`/runs/${runId}/actions/${action}`, request).reply(204)
+      await Runs.action(action, runId, request)
       scope.done()
       done()
     })

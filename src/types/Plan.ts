@@ -4,11 +4,11 @@ export type Plan = TerraformCloudData<PlanAttributes> & {
   relationships: PlanRelationship
 }
 
-interface PlanRelationship {
+export interface PlanRelationship {
   stateVersions: Relationship
 }
 
-interface PlanAttributes {
+export interface PlanAttributes {
   hasChanges: boolean
   logReadUrl: string
   resourceAdditions: number
@@ -18,7 +18,7 @@ interface PlanAttributes {
   statusTimestamps: PlanTimestamps
 }
 
-interface PlanTimestamps {
+export interface PlanTimestamps {
   finishedAt: Date
   pendingAt: Date
   queuedAt: Date

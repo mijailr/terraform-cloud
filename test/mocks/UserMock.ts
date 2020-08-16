@@ -1,5 +1,4 @@
-import { Type } from '../../src/types/TerraformCloudData'
-import { UserPassword, UserUpdateInfo } from '../../src/types/User'
+import { UserUpdateInfo, UserUpdatePassword } from '../../src'
 
 export const UserMock = {
   data: {
@@ -32,23 +31,23 @@ export const UserMock = {
   },
 }
 
-export const UserPasswordUpdateMock = {
+export const UserPasswordUpdateMock: UserUpdatePassword = {
   data: {
-    type: Type.User,
+    type: 'users',
     attributes: {
       current_password: 'current-password',
       password: 'new-password',
       password_confirmation: 'new-password',
     },
   },
-} as UserPassword
+}
 
-export const UserDetailsUpdateMock = {
+export const UserDetailsUpdateMock: UserUpdateInfo = {
   data: {
-    type: Type.User,
+    type: 'users',
     attributes: {
       email: 'user@example.com',
       username: 'username',
     },
   },
-} as UserUpdateInfo
+}

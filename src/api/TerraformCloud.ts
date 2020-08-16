@@ -1,10 +1,10 @@
 import { EventEmitter } from 'events'
 import terraformCloudApiClient from './terraformCloudApiClient'
-import Account from './Account'
-import Plans from './Plans'
-import Runs from './Runs'
+import Account from './endpoints/Account'
+import Plans from './endpoints/Plans'
+import Runs from './endpoints/Runs'
 
-export default class TerraformCloud extends EventEmitter {
+export class TerraformCloud extends EventEmitter {
   public Account: Account
   public Plans: Plans
   public Runs: Runs
