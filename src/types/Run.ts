@@ -4,6 +4,8 @@ export type Run = TerraformCloudData<RunAttributes> & {
   relationships: RunRelationship
 }
 
+export type RunAction = 'apply' | 'discard' | 'cancel' | 'force-cancel' | 'force-execute'
+
 export type RunActionRequest = {
   comment?: string
 }
