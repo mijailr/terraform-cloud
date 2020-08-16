@@ -1,4 +1,5 @@
-export default {
+import { RunRequest } from '../../src/types/Run'
+export const RunMock = {
   data: {
     id: 'run-ybWY3ADtDx4YNaph',
     type: 'runs',
@@ -53,3 +54,28 @@ export default {
     links: { self: '/api/v2/runs/run-ybWY3ADtDx4YNaph' },
   },
 }
+
+export const RunRequestMock = {
+  data: {
+    attributes: {
+      'is-destroy': false,
+      message: 'Custom message',
+      'target-addrs': ['example.resource_address'],
+    },
+    type: 'runs',
+    relationships: {
+      workspace: {
+        data: {
+          type: 'workspaces',
+          id: 'ws-LLGHCr4SWy28wyGN',
+        },
+      },
+      'configuration-version': {
+        data: {
+          type: 'configuration-versions',
+          id: 'cv-n4XQPBa2QnecZJ4G',
+        },
+      },
+    },
+  },
+} as RunRequest
