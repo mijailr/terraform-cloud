@@ -11,4 +11,9 @@ export abstract class Request {
     const response = await this.client.patch(path, request)
     return response.data
   }
+
+  protected async post<Entity, Request>(path: string, request: Request): Promise<Entity> {
+    const response = await this.client.post(path, request)
+    return response.data
+  }
 }
