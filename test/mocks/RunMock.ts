@@ -56,9 +56,9 @@ export const RunMock = {
 export const RunRequestMock: RunRequest = {
   data: {
     attributes: {
-      'is-destroy': false,
+      iDestroy: false,
       message: 'Custom message',
-      'target-addrs': ['example.resource_address'],
+      targetAddrs: ['example.resource_address'],
     },
     relationships: {
       workspace: {
@@ -67,7 +67,7 @@ export const RunRequestMock: RunRequest = {
           id: 'ws-LLGHCr4SWy28wyGN',
         },
       },
-      'configuration-version': {
+      configurationVersion: {
         data: {
           type: 'configuration-versions',
           id: 'cv-n4XQPBa2QnecZJ4G',

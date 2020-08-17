@@ -13,9 +13,9 @@ export type RunActionRequest = {
 export type RunRequest = {
   data: {
     attributes: {
-      'is-destroy'?: boolean
+      iDestroy?: boolean
       message?: string
-      'target-addrs'?: string[]
+      targetAddrs?: string[]
     }
     relationships: {
       workspace: {
@@ -24,7 +24,7 @@ export type RunRequest = {
           type: 'workspaces'
         }
       }
-      'configuration-version': {
+      configurationVersion: {
         data: {
           id: string
           type: 'configuration-versions'
