@@ -6,11 +6,14 @@
       {
         "preset": "angular",
         "releaseRules": [
-          { "type": "docs", "scope": "README", "release": "patch" },
+          { "breaking": true, "release": "major" },
+          { "revert": true, "release": "patch" },
+          { "type": "feat", "release": "minor" },
+          { "type": "docs", "release": "patch" },
           { "type": "refactor", "release": "patch" },
+          { "type": "perf", "release": "patch" },
           { "type": "fix", "release": "patch" },
-          { "type": "build", "release": "minor" },
-          { "type": "feat", "release": "minor" }
+          { "type": "build", "release": "patch" }
         ],
         "parserOpts": {
           "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
