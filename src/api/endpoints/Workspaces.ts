@@ -1,14 +1,19 @@
 import { AxiosInstance } from 'axios'
 import Request from './Request'
-import { Workspace, WorkspaceCreate } from '../../types'
+import { Workspace, WorkspaceRequest } from '../../types'
 
 export default class Workspaces extends Request {
   constructor(client: AxiosInstance) {
     super(client)
   }
 
-  create(organizationName: string, request: WorkspaceCreate): Promise<Workspace> {
-    const path = `/organizations/${organizationName}/worspaces`
-    return this.post<Workspace, WorkspaceCreate>(path, request)
+  create(organizationName: string, request: WorkspaceRequest): Promise<Workspace> {
+    const path = `/organizations/${organizationName}/workspaces`
+    return this.post<Workspace, WorkspaceRequest>(path, request)
+  }
+
+  update(organizationName: string, workspaceId: string, request: WorkspaceRequest): Promise<Workspace> {
+    const path = `/organizations/${organizationName}/workspaces/${workspaceId}`
+    return this.patch<Workspace, WorkspaceRequest>(path, request)
   }
 }
