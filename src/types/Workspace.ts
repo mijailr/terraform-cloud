@@ -1,8 +1,8 @@
 import { Params, TerraformCloudData } from './TerraformCloudData'
 
-export type WorkspaceCreate = Params<'workspaces', WorkspaceCreateAttributes>
+export type WorkspaceRequest = Params<'workspaces', WorkspaceRequestAttributes>
 
-export interface WorkspaceCreateAttributes {
+export interface WorkspaceRequestAttributes {
   name: string
   agentPoolId?: string
   allowDestroyPlan?: boolean
