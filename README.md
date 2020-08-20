@@ -68,7 +68,7 @@ Runs.action('cancel', 'run-id', { data: { comment: 'cancel run by id' } }).then(
 
 - [x] [Account](https://www.terraform.io/docs/cloud/api/account.html) (100%)
 - [x] [Runs](https://www.terraform.io/docs/cloud/api/plans.html) (100%)
-- [x] [Plans](https://www.terraform.io/docs/cloud/api/plans.html) (90%) - **TODO:** Plan Json Output
+- [x] [Plans](https://www.terraform.io/docs/cloud/api/plans.html) (90%) - **TODO:** [Handle Terraform Plans JsonOutput #17](https://github.com/mijailr/terraform-cloud/issues/17)
 
 ## TODO
 
