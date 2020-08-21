@@ -1,5 +1,5 @@
 import nock from 'nock'
-import TerraformCloud, { RunAction, RunActionRequest } from '../../src'
+import { RunAction, RunActionRequest, TerraformCloud } from '../../src'
 import { RunMock, RunRequestMock } from '../mocks'
 
 const { Runs } = new TerraformCloud('api-key')
