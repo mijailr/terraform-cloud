@@ -4,7 +4,7 @@ import Account from './endpoints/Account'
 import Plans from './endpoints/Plans'
 import Runs from './endpoints/Runs'
 
-export class TerraformCloud extends EventEmitter {
+export default class TerraformCloud extends EventEmitter {
   public Account: Account
   public Plans: Plans
   public Runs: Runs

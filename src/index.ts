@@ -1,4 +1,4 @@
-import { TerraformCloud } from './api/TerraformCloud'
+import TerraformCloud from './api/TerraformCloud'
 
 export * from './types/Plan'
 export * from './types/Run'
