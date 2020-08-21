@@ -1,5 +1,5 @@
 import nock from 'nock'
-import TerraformCloud from '../../src/'
+import { TerraformCloud } from '../../src/'
 import { UserDetailsUpdateMock, UserMock, UserPasswordUpdateMock } from '../mocks'
 
 const { Account } = new TerraformCloud('api-key')
