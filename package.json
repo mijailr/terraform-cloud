@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "casing": "^1.1.0"
+    "camelcase-keys": "^6.2.2"
   },
   "bugs": {
     "url": "https://github.com/mijailr/terraform-cloud/issues"
