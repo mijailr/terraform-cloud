@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import camelcaseKeys from 'camelcase-keys'
-import decamelcaseKeys from 'decamelcase-keys'
 import { VERSION } from '../version'
 
 const terraformCloudApiClient = (apiKey: string): AxiosInstance => {
@@ -13,7 +12,6 @@ const terraformCloudApiClient = (apiKey: string): AxiosInstance => {
       'Content-Type': 'application/vnd.api+json',
       'User-Agent': `terraform-cloud/${VERSION}`,
     }
-    req.data = decamelcaseKeys(req.data, { separator: '-' })
     return req
   })
 
