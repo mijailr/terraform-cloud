@@ -1,5 +1,5 @@
 import nock from 'nock'
-import TerraformCloud from '../../src'
+import { TerraformCloud } from '../../src'
 import { WorkspaceRequest } from '../../src/types'
 import { WorkspaceMock, WorkspaceNoVcsRequest } from '../mocks'
 
