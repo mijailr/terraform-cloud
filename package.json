@@ -42,7 +42,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "casing": "^1.1.0"
   },
   "bugs": {
