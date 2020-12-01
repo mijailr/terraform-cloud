@@ -15,7 +15,7 @@ const terraformCloudApiClient = (apiKey: string): AxiosInstance => {
     return req
   })
 
-  client.interceptors.response.use((res: AxiosResponse) => camelcaseKeys(res.data))
+  client.interceptors.response.use((res: AxiosResponse) => camelcaseKeys(res.data, { deep: true }))
 
   return client
 }
