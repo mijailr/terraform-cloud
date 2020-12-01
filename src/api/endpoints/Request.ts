@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios'
 
 export default abstract class Request {
-  constructor(private client: AxiosInstance) {}
+  constructor(protected client: AxiosInstance) {}
   protected async get<T>(path: string): Promise<T> {
     const response = await this.client.get<T>(path)
     return response.data

@@ -11,4 +11,9 @@ export default class Plans extends Request {
     const path = `/plans/${planId}`
     return await this.get<Plan>(path)
   }
+
+  async jsonOutput(planId: string): Promise<string> {
+    const path = `/plans/${planId}/json-output`
+    return await this.client.get(path)
+  }
 }
