@@ -15,9 +15,8 @@ export default class ConfigurationVersions extends Request {
     )
   }
 
-  async upload(url: string, data: any): Promise<boolean> {
-    const result = await axios.put(url, data)
-    console.log({ result })
-    return true
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+  async upload(url: string, data: any): Promise<any> {
+    return await axios.put(url, data)
   }
 }
