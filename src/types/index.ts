@@ -1,5 +1,6 @@
 export * from './User'
 export * from './Plan'
+export * from './Apply'
 export * from './Run'
 export * from './TerraformCloudData'
 export * from './Workspace'

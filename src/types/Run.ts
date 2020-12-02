@@ -38,6 +38,7 @@ export interface RunRelationship {
   confirmedBy: Relationship
   createdBy: Relationship
   plan: Relationship
+  apply: Relationship
 }
 
 export interface RunAttributes {
