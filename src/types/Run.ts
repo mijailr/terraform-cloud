@@ -13,7 +13,7 @@ export type RunActionRequest = {
 export type RunRequest = {
   data: {
     attributes: {
-      iDestroy?: boolean
+      isDestroy?: boolean
       message?: string
       targetAddrs?: string[]
     }
