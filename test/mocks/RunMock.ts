@@ -56,7 +56,7 @@ export const RunMock = {
 export const RunRequestMock: RunRequest = {
   data: {
     attributes: {
-      iDestroy: false,
+      isDestroy: false,
       message: 'Custom message',
       targetAddrs: ['example.resource_address'],
     },
