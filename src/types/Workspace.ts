@@ -44,7 +44,7 @@ export interface WorkspaceAttributes {
   triggerPrefixes: []
   vcsRepo: null
   workingDirectory: string
-  executionMode: string
+  executionMode: 'remote' | 'local' | 'agent'
 }
 
 export interface WorkspacePermissions {

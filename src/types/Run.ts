@@ -13,7 +13,7 @@ export type RunActionRequest = {
 export type RunRequest = {
   data: {
     attributes: {
-      iDestroy?: boolean
+      isDestroy?: boolean
       message?: string
       targetAddrs?: string[]
     }
@@ -38,6 +38,7 @@ export interface RunRelationship {
   confirmedBy: Relationship
   createdBy: Relationship
   plan: Relationship
+  apply: Relationship
 }
 
 export interface RunAttributes {

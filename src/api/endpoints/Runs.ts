@@ -25,6 +25,6 @@ export default class Runs extends Request {
 
   async action(action: RunAction, runId: string, request?: RunActionRequest): Promise<void> {
     const path = `/runs/${runId}/actions/${action}`
-    return await this.post<void, RunActionRequest>(path, request || {})
+    return await this.client.post(path, request || {})
   }
 }

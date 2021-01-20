@@ -30,4 +30,16 @@ describe('Workspaces endpoints', () => {
     scope.done()
     done()
   })
+
+  it('should camelcase keys', async done => {
+    const scope = nock('https://app.terraform.io/api/v2')
+      .patch(`/organizations/${organizationName}/workspaces/${workspaceId}`, WorkspaceNoVcsRequest)
+      .reply(200, WorkspaceMock)
+
+    const workspace = await Workspaces.update(organizationName, workspaceId, WorkspaceNoVcsRequest as WorkspaceRequest)
+
+    expect(workspace.attributes.createdAt).toBe('2017-11-18T00:43:59.384Z')
+    scope.done()
+    done()
+  })
 })
